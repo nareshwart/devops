@@ -1,0 +1,90 @@
+<svg width="680" height="360" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="360" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrow marker -->
+    <marker id="arrow-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+  </defs>
+
+  <!-- Title / Outer folder: myproject/ -->
+  <rect x="15" y="15" width="650" height="330" fill="#f8fafc" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4" rx="8"/>
+  <text x="35" y="38" font-size="13" font-weight="bold" fill="#0f172a">📁 myproject/ <tspan font-weight="normal" font-size="11" fill="#64748b">(project directory on your computer / server — directory == folder)</tspan></text>
+
+  <!-- ── 1. WORKSPACE / WORK AREA ── -->
+  <rect x="30" y="55" width="175" height="210" fill="#ffffff" stroke="#cf222e" stroke-width="2" rx="6"/>
+  <text x="117" y="80" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#cf222e">1) Workspace / Work Area</text>
+  <line x1="30" y1="92" x2="205" y2="92" stroke="#fecdd3" stroke-width="1"/>
+  
+  <!-- Commands badge -->
+  <rect x="42" y="102" width="151" height="34" fill="#fff1f2" stroke="#f43f5e" stroke-width="1" rx="4"/>
+  <text x="117" y="117" text-anchor="middle" font-size="9" font-weight="bold" fill="#9f1239">COMMANDS USED</text>
+  <text x="117" y="130" text-anchor="middle" font-size="10" font-family="monospace" fill="#be123c">touch &#8226; vi / vim &#8226; rm</text>
+
+  <!-- Description -->
+  <text x="40" y="156" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Physical Space:</text>
+  <text x="48" y="172" font-size="9.5" fill="#475569">Where files are created,</text>
+  <text x="48" y="186" font-size="9.5" fill="#475569">modified, or deleted.</text>
+  
+  <text x="40" y="212" font-size="10" font-weight="bold" fill="#0f172a">&#8226; User Workspace:</text>
+  <text x="48" y="228" font-size="9.5" fill="#475569">Where developers &amp; DevOps</text>
+  <text x="48" y="242" font-size="9.5" fill="#475569">engineers actively work.</text>
+
+  <!-- ── ARROW 1: git add ── -->
+  <line x1="205" y1="140" x2="242" y2="140" stroke="#0969da" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="207" y="115" width="45" height="18" fill="#ddf4ff" stroke="#0969da" stroke-width="0.8" rx="3"/>
+  <text x="229" y="128" text-anchor="middle" font-size="9.5" font-family="monospace" font-weight="bold" fill="#0969da">git add</text>
+
+  <!-- ── 2. STAGING AREA / INDEXING AREA ── -->
+  <rect x="247" y="55" width="185" height="210" fill="#ffffff" stroke="#d97706" stroke-width="2" rx="6"/>
+  <text x="339" y="80" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#d97706">2) Staging Area / Index</text>
+  <line x1="247" y1="92" x2="432" y2="92" stroke="#fde68a" stroke-width="1"/>
+
+  <!-- Nature badge -->
+  <rect x="259" y="102" width="161" height="34" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" rx="4"/>
+  <text x="339" y="117" text-anchor="middle" font-size="9" font-weight="bold" fill="#92400e">VIRTUAL BUFFER ZONE</text>
+  <text x="339" y="130" text-anchor="middle" font-size="9.5" fill="#b45309">Maintained in memory (index)</text>
+
+  <!-- Description -->
+  <text x="257" y="156" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Snapshot Preparation:</text>
+  <text x="265" y="172" font-size="9.5" fill="#475569">Git prepares a snapshot for</text>
+  <text x="265" y="186" font-size="9.5" fill="#475569">every change made to files.</text>
+
+  <text x="257" y="212" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Buffer Zone:</text>
+  <text x="265" y="228" font-size="9.5" fill="#475569">Intermediate gate between</text>
+  <text x="265" y="242" font-size="9.5" fill="#475569">workspace &amp; local repo.</text>
+
+  <!-- ── ARROW 2: git commit ── -->
+  <line x1="432" y1="140" x2="472" y2="140" stroke="#1a7f37" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <rect x="431" y="115" width="56" height="18" fill="#dafbe1" stroke="#1a7f37" stroke-width="0.8" rx="3"/>
+  <text x="459" y="128" text-anchor="middle" font-size="9.5" font-family="monospace" font-weight="bold" fill="#1a7f37">git commit</text>
+
+  <!-- ── 3. LOCAL REPOSITORY / COMMIT AREA ── -->
+  <rect x="477" y="55" width="175" height="210" fill="#ffffff" stroke="#1a7f37" stroke-width="2" rx="6"/>
+  <text x="564" y="80" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a7f37">3) Local Repo / Commit Area</text>
+  <line x1="477" y1="92" x2="652" y2="92" stroke="#bbf7d0" stroke-width="1"/>
+
+  <!-- Storage location badge -->
+  <rect x="489" y="102" width="151" height="34" fill="#f0fdf4" stroke="#22c55e" stroke-width="1" rx="4"/>
+  <text x="564" y="117" text-anchor="middle" font-size="9" font-weight="bold" fill="#166534">HIDDEN STORAGE</text>
+  <text x="564" y="130" text-anchor="middle" font-size="10" font-family="monospace" fill="#15803d">myproject/.git/</text>
+
+  <!-- Description -->
+  <text x="487" y="156" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Protected Directory:</text>
+  <text x="495" y="172" font-size="9.5" fill="#475569">Hidden so no one deletes</text>
+  <text x="495" y="186" font-size="9.5" fill="#475569">history accidentally.</text>
+
+  <text x="487" y="212" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Commit ID (Hash):</text>
+  <text x="495" y="228" font-size="9.5" fill="#475569">Permanent reference saved</text>
+  <text x="495" y="242" font-size="9.5" fill="#475569">to hard disk on computer.</text>
+
+  <!-- ── BOTTOM SUMMARY ── -->
+  <rect x="30" y="280" width="622" height="50" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="6"/>
+  <text x="45" y="300" font-size="10.5" font-weight="bold" fill="#0f172a">Summary Flow:</text>
+  <text x="45" y="318" font-size="10" fill="#475569">Modify files in <tspan font-weight="bold" fill="#cf222e">Workspace</tspan> &#8594; stage snapshots via <tspan font-weight="bold" fill="#0969da">git add</tspan> &#8594; save permanently in <tspan font-weight="bold" fill="#1a7f37">.git</tspan> via <tspan font-weight="bold" fill="#1a7f37">git commit</tspan></text>
+</svg>

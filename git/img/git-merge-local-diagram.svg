@@ -1,0 +1,102 @@
+<svg width="680" height="380" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="380" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="m-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="m-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#8250df"/>
+    </marker>
+    <marker id="m-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+    <marker id="m-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#cf222e"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Local Git Merge: 3 Scenarios</text>
+
+  <!-- ── SCENARIO 1: FAST-FORWARD ── -->
+  <rect x="20" y="40" width="640" height="92" fill="#f8fafc" stroke="#d0d7de" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="48" width="135" height="20" fill="#ddf4ff" rx="3"/>
+  <text x="97" y="62" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#0969da">1. Fast-Forward Merge</text>
+  <text x="180" y="62" font-size="9.5" fill="#57606a">(main had no new commits &#8594; pointer simply slides forward)</text>
+
+  <!-- Commits C1 -> C2 -> C3 -->
+  <circle cx="210" cy="98" r="14" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <text x="210" y="101" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">C1</text>
+  <line x1="224" y1="98" x2="276" y2="98" stroke="#0969da" stroke-width="1.8" marker-end="url(#m-blue)"/>
+
+  <circle cx="290" cy="98" r="14" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <text x="290" y="101" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">C2</text>
+  <line x1="304" y1="98" x2="356" y2="98" stroke="#8250df" stroke-width="1.8" marker-end="url(#m-purple)"/>
+
+  <circle cx="370" cy="98" r="14" fill="#fcf8ff" stroke="#8250df" stroke-width="2"/>
+  <text x="370" y="101" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#8250df">C3</text>
+
+  <!-- Labels -->
+  <rect x="400" y="88" width="105" height="20" fill="#0969da" rx="3"/>
+  <text x="452" y="102" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">main &amp; feature</text>
+  <text x="520" y="102" font-size="9" fill="#166534">&#10003; No new commit</text>
+
+  <!-- ── SCENARIO 2: 3-WAY MERGE (CLEAN) ── -->
+  <rect x="20" y="142" width="640" height="110" fill="#f8fafc" stroke="#d0d7de" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="150" width="135" height="20" fill="#dafbe1" rx="3"/>
+  <text x="97" y="164" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#1a7f37">2. 3-Way Merge (Auto)</text>
+  <text x="180" y="164" font-size="9.5" fill="#57606a">(both branches diverged on different files &#8594; auto merge commit)</text>
+
+  <!-- Base C2 -->
+  <circle cx="210" cy="195" r="13" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <text x="210" y="198" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#0969da">C2</text>
+
+  <!-- main branch path: C3 -->
+  <line x1="223" y1="188" x2="280" y2="175" stroke="#0969da" stroke-width="1.8" marker-end="url(#m-blue)"/>
+  <circle cx="293" cy="172" r="13" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <text x="293" y="175" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#0969da">C3</text>
+
+  <!-- feature branch path: C4 -->
+  <line x1="223" y1="202" x2="280" y2="218" stroke="#8250df" stroke-width="1.8" marker-end="url(#m-purple)"/>
+  <circle cx="293" cy="221" r="13" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="293" y="224" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#8250df">C4</text>
+
+  <!-- Merge lines into M1 -->
+  <line x1="306" y1="175" x2="385" y2="190" stroke="#0969da" stroke-width="1.8" marker-end="url(#m-green)"/>
+  <line x1="306" y1="218" x2="385" y2="200" stroke="#8250df" stroke-width="1.8" marker-end="url(#m-green)"/>
+
+  <!-- Merge Commit M1 -->
+  <circle cx="400" cy="195" r="15" fill="#dafbe1" stroke="#1a7f37" stroke-width="2.2"/>
+  <text x="400" y="198" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#1a7f37">M1</text>
+  <rect x="425" y="186" width="60" height="18" fill="#1a7f37" rx="3"/>
+  <text x="455" y="199" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">main (HEAD)</text>
+  <text x="500" y="199" font-size="9" fill="#166534">&#10003; 2 Parent Commits</text>
+
+  <!-- ── SCENARIO 3: MERGE CONFLICT & RESOLUTION ── -->
+  <rect x="20" y="262" width="640" height="106" fill="#fff8f8" stroke="#fecdd3" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="270" width="135" height="20" fill="#ffebe9" rx="3"/>
+  <text x="97" y="284" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#cf222e">3. Merge Conflict</text>
+  <text x="180" y="284" font-size="9.5" fill="#57606a">(same file, same line edited &#8594; manual resolution required)</text>
+
+  <!-- Conflict workflow step boxes -->
+  <rect x="40" y="300" width="140" height="52" fill="#ffffff" stroke="#cf222e" stroke-width="1" rx="4"/>
+  <text x="110" y="318" text-anchor="middle" font-size="9" font-weight="bold" fill="#cf222e">1. Git Pauses Merge</text>
+  <text x="110" y="334" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#57606a">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ... &gt;&gt;&gt;&gt;&gt;&gt;&gt;</text>
+
+  <line x1="180" y1="326" x2="215" y2="326" stroke="#cf222e" stroke-width="1.5" marker-end="url(#m-red)"/>
+
+  <rect x="220" y="300" width="160" height="52" fill="#ffffff" stroke="#d97706" stroke-width="1" rx="4"/>
+  <text x="300" y="318" text-anchor="middle" font-size="9" font-weight="bold" fill="#d97706">2. Manual Resolution</text>
+  <text x="300" y="334" text-anchor="middle" font-size="8.5" fill="#57606a">Edit file &amp; delete markers</text>
+  <text x="300" y="346" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#0969da">git add &lt;file&gt;</text>
+
+  <line x1="380" y1="326" x2="415" y2="326" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#m-green)"/>
+
+  <rect x="420" y="300" width="160" height="52" fill="#ffffff" stroke="#1a7f37" stroke-width="1" rx="4"/>
+  <text x="500" y="318" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a7f37">3. Finalize Commit</text>
+  <text x="500" y="334" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a7f37">git commit</text>
+  <text x="500" y="346" text-anchor="middle" font-size="8" fill="#57606a">(Or git merge --abort)</text>
+</svg>

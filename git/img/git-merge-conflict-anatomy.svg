@@ -1,0 +1,62 @@
+<svg width="680" height="360" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="360" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="mc-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#cf222e"/>
+    </marker>
+    <marker id="mc-arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Anatomy of a Git Merge Conflict</text>
+
+  <!-- ── 1. WHY IT HAPPENS (TOP BOX) ── -->
+  <rect x="25" y="40" width="630" height="85" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <text x="40" y="58" font-size="10.5" font-weight="bold" fill="#0f172a">Why Merge Conflicts Happen:</text>
+  <text x="40" y="76" font-size="9.5" fill="#57606a">&#8226; Git can automatically merge files when changes happen on <tspan font-weight="bold" fill="#1a7f37">different lines</tspan> or <tspan font-weight="bold" fill="#1a7f37">different files</tspan>.</text>
+  <text x="40" y="94" font-size="9.5" fill="#57606a">&#8226; When two branches modify the <tspan font-weight="bold" fill="#cf222e">exact same line</tspan> differently, Git pauses and asks: <tspan font-style="italic" fill="#24292f">"Which version is correct?"</tspan></text>
+  <text x="40" y="112" font-size="9.5" fill="#57606a">&#8226; Git writes <tspan font-weight="bold" fill="#cf222e">conflict markers</tspan> directly into the file and sets repo state to <tspan font-family="monospace" font-weight="bold" fill="#cf222e">MERGING</tspan>.</text>
+
+  <!-- ── 2. CONFLICT MARKERS DISSECTION ── -->
+  <rect x="25" y="138" width="370" height="145" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5" rx="6"/>
+  <rect x="25" y="138" width="370" height="24" fill="#ffe4e6" rx="6"/>
+  <text x="210" y="154" text-anchor="middle" font-size="10" font-weight="bold" fill="#be123c">The Conflict Markers Inside Your File</text>
+  <line x1="25" y1="162" x2="395" y2="162" stroke="#f43f5e" stroke-width="1"/>
+
+  <text x="40" y="180" font-size="10" font-family="monospace" font-weight="bold" fill="#cf222e">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</text>
+  <text x="40" y="198" font-size="10" font-family="monospace" fill="#0969da">  port = 8080   # (Our current branch: main)</text>
+  <text x="40" y="218" font-size="10" font-family="monospace" font-weight="bold" fill="#64748b">=======</text>
+  <text x="40" y="238" font-size="10" font-family="monospace" fill="#8250df">  port = 9000   # (Incoming branch: feature-port)</text>
+  <text x="40" y="258" font-size="10" font-family="monospace" font-weight="bold" fill="#cf222e">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-port</text>
+  <text x="40" y="274" font-size="8.5" fill="#57606a">All markers must be removed before staging!</text>
+
+  <!-- Arrow to resolution -->
+  <line x1="395" y1="210" x2="428" y2="210" stroke="#1a7f37" stroke-width="2" marker-end="url(#mc-arr-green)"/>
+  <text x="412" y="202" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a7f37">Resolve</text>
+
+  <!-- ── 3. RESOLUTION WORKFLOW (RIGHT BOX) ── -->
+  <rect x="435" y="138" width="220" height="145" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5" rx="6"/>
+  <rect x="435" y="138" width="220" height="24" fill="#dcfce7" rx="6"/>
+  <text x="545" y="154" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">3-Step Resolution Process</text>
+  <line x1="435" y1="162" x2="655" y2="162" stroke="#22c55e" stroke-width="1"/>
+
+  <text x="450" y="180" font-size="10" font-weight="bold" fill="#166534">1. Edit &amp; Choose</text>
+  <text x="450" y="194" font-size="9" fill="#57606a">Keep wanted code &amp; delete</text>
+  <text x="450" y="206" font-size="9" fill="#57606a">markers (&lt;&lt;&lt;, ===, &gt;&gt;&gt;)</text>
+
+  <text x="450" y="226" font-size="10" font-weight="bold" fill="#166534">2. Stage the File</text>
+  <text x="450" y="239" font-size="9.5" font-family="monospace" fill="#0969da">git add &lt;resolved-file&gt;</text>
+
+  <text x="450" y="258" font-size="10" font-weight="bold" fill="#166534">3. Conclude Merge</text>
+  <text x="450" y="271" font-size="9.5" font-family="monospace" fill="#166534">git commit</text>
+
+  <!-- ── 4. SAFETY NET (BOTTOM BAR) ── -->
+  <rect x="25" y="295" width="630" height="52" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.2" rx="6"/>
+  <text x="40" y="315" font-size="10" font-weight="bold" fill="#7d4e00">&#9888; Safety Escape Hatch: git merge --abort</text>
+  <text x="40" y="333" font-size="9.5" fill="#57606a">If you get overwhelmed, run <tspan font-family="monospace" font-weight="bold" fill="#24292f">git merge --abort</tspan> anytime to cancel the merge and return your branch to its clean, pre-merge state.</text>
+</svg>

@@ -1,0 +1,107 @@
+<svg width="680" height="420" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="420" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="wf-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="wf-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+    <marker id="wf-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#8250df"/>
+    </marker>
+    <marker id="wf-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#cf222e"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Popular Git Branching Workflows in DevOps</text>
+
+  <!-- ── 1. GITHUB FLOW (TOP) ── -->
+  <rect x="20" y="42" width="640" height="105" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="50" width="130" height="20" fill="#ddf4ff" rx="3"/>
+  <text x="95" y="64" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#0969da">1. GitHub Flow</text>
+  <text x="175" y="64" font-size="9" fill="#57606a">&#8226; Simple, continuous deployment &#8226; main + short-lived feature branches + PR</text>
+
+  <!-- main branch line -->
+  <line x1="80" y1="110" x2="520" y2="110" stroke="#0969da" stroke-width="2.5"/>
+  <circle cx="100" cy="110" r="10" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <circle cx="220" cy="110" r="10" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <circle cx="380" cy="110" r="10" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <circle cx="500" cy="110" r="11" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+  <text x="500" y="113" text-anchor="middle" font-size="8" font-family="monospace" fill="#166534">M</text>
+  <text x="545" y="113" font-size="9" font-weight="bold" fill="#0969da">main</text>
+
+  <!-- feature branch curve -->
+  <path d="M 220 110 C 240 80, 270 80, 290 80 L 330 80 C 350 80, 365 95, 380 110" fill="none" stroke="#8250df" stroke-width="2"/>
+  <circle cx="310" cy="80" r="9" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="310" y="70" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#8250df">feature/auth (PR)</text>
+
+  <!-- deploy badge -->
+  <rect x="580" y="98" width="70" height="22" fill="#dafbe1" stroke="#1a7f37" stroke-width="1" rx="3"/>
+  <text x="615" y="113" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#166534">&#128640; Deploy</text>
+
+  <!-- ── 2. GITFLOW (MIDDLE) ── -->
+  <rect x="20" y="156" width="640" height="135" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="164" width="130" height="20" fill="#f0fdf4" rx="3"/>
+  <text x="95" y="178" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#1a7f37">2. Gitflow Workflow</text>
+  <text x="175" y="178" font-size="9" fill="#57606a">&#8226; Scheduled release cycles &#8226; main, develop, feature, release, hotfix</text>
+
+  <!-- Lines: main (top), develop (mid), feature (bottom) -->
+  <!-- main -->
+  <line x1="80" y1="205" x2="490" y2="205" stroke="#0969da" stroke-width="2"/>
+  <circle cx="100" cy="205" r="8" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <circle cx="470" cy="205" r="9" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+  <text x="515" y="209" font-size="8.5" font-weight="bold" fill="#0969da">main (v1.0)</text>
+
+  <!-- hotfix bridge -->
+  <path d="M 100 205 C 130 190, 160 190, 190 205" fill="none" stroke="#cf222e" stroke-width="1.8"/>
+  <text x="145" y="196" text-anchor="middle" font-size="8" fill="#cf222e">hotfix</text>
+
+  <!-- develop -->
+  <line x1="80" y1="240" x2="490" y2="240" stroke="#1a7f37" stroke-width="2"/>
+  <circle cx="100" cy="240" r="8" fill="#ffffff" stroke="#1a7f37" stroke-width="1.8"/>
+  <circle cx="210" cy="240" r="8" fill="#ffffff" stroke="#1a7f37" stroke-width="1.8"/>
+  <circle cx="360" cy="240" r="8" fill="#ffffff" stroke="#1a7f37" stroke-width="1.8"/>
+  <circle cx="470" cy="240" r="8" fill="#ffffff" stroke="#1a7f37" stroke-width="1.8"/>
+  <text x="515" y="244" font-size="8.5" font-weight="bold" fill="#1a7f37">develop</text>
+
+  <!-- feature off develop -->
+  <path d="M 210 240 C 230 268, 260 272, 285 272 L 310 272 C 335 272, 345 258, 360 240" fill="none" stroke="#8250df" stroke-width="1.8"/>
+  <circle cx="295" cy="272" r="8" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="295" y="284" text-anchor="middle" font-size="8" fill="#8250df">feature</text>
+
+  <!-- release branch connecting develop to main -->
+  <path d="M 360 240 C 400 222, 430 222, 470 205" fill="none" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3,2"/>
+  <text x="420" y="224" text-anchor="middle" font-size="8" font-weight="bold" fill="#d97706">release v1.1</text>
+
+  <!-- ── 3. TRUNK-BASED DEVELOPMENT (BOTTOM) ── -->
+  <rect x="20" y="300" width="640" height="105" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="308" width="175" height="20" fill="#fff8c5" rx="3"/>
+  <text x="117" y="322" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#7d4e00">3. Trunk-Based Development</text>
+  <text x="220" y="322" font-size="9" fill="#57606a">&#8226; High-velocity DevOps &#8226; Direct commits / tiny branches (&lt; 24h) + Feature Flags</text>
+
+  <!-- trunk line -->
+  <line x1="80" y1="365" x2="520" y2="365" stroke="#7d4e00" stroke-width="3"/>
+  <circle cx="110" cy="365" r="9" fill="#ffffff" stroke="#7d4e00" stroke-width="2"/>
+  <circle cx="180" cy="365" r="9" fill="#ffffff" stroke="#7d4e00" stroke-width="2"/>
+  <circle cx="250" cy="365" r="9" fill="#ffffff" stroke="#7d4e00" stroke-width="2"/>
+  <circle cx="320" cy="365" r="9" fill="#ffffff" stroke="#7d4e00" stroke-width="2"/>
+  <circle cx="390" cy="365" r="9" fill="#ffffff" stroke="#7d4e00" stroke-width="2"/>
+  <circle cx="460" cy="365" r="9" fill="#ffffff" stroke="#7d4e00" stroke-width="2"/>
+  <text x="545" y="369" font-size="9" font-weight="bold" fill="#7d4e00">trunk (main)</text>
+
+  <!-- Tiny 1-day branch -->
+  <path d="M 180 365 C 195 342, 235 342, 250 365" fill="none" stroke="#8250df" stroke-width="1.6"/>
+  <circle cx="215" cy="346" r="6" fill="#fcf8ff" stroke="#8250df" stroke-width="1.5"/>
+  <text x="215" y="338" text-anchor="middle" font-size="7.5" fill="#8250df">&lt; 1 day branch</text>
+
+  <!-- Feature Flag pill -->
+  <rect x="330" y="380" width="120" height="18" fill="#ddf4ff" stroke="#0969da" stroke-width="0.8" rx="3"/>
+  <text x="390" y="392" text-anchor="middle" font-size="8" font-family="monospace" fill="#0969da">&#9873; Feature Flags On/Off</text>
+</svg>
+

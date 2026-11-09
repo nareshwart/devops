@@ -1,0 +1,75 @@
+<svg width="680" height="400" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="400" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="gh-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="gh-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Git (Local Tool) vs. GitHub (Cloud Platform)</text>
+
+  <!-- ── LEFT BOX: GIT (LOCAL) ── -->
+  <rect x="25" y="45" width="225" height="235" fill="#ffffff" stroke="#cf222e" stroke-width="2" rx="8"/>
+  <rect x="25" y="45" width="225" height="32" fill="#fff1f2" rx="8"/>
+  <text x="137" y="66" text-anchor="middle" font-size="12" font-weight="bold" fill="#cf222e">Git (Command-Line Tool)</text>
+  <line x1="25" y1="77" x2="250" y2="77" stroke="#fecdd3" stroke-width="1"/>
+
+  <text x="38" y="98" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Nature:</text>
+  <text x="48" y="112" font-size="9.5" fill="#57606a">Distributed VCS Software</text>
+  <text x="48" y="125" font-size="9.5" fill="#57606a">installed on your computer.</text>
+
+  <text x="38" y="148" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Runs Offline:</text>
+  <text x="48" y="162" font-size="9.5" fill="#57606a">No internet needed to commit,</text>
+  <text x="48" y="175" font-size="9.5" fill="#57606a">branch, diff, or check log.</text>
+
+  <text x="38" y="198" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Core Responsibility:</text>
+  <text x="48" y="212" font-size="9.5" fill="#57606a">Snapshot tracking on disk</text>
+  <text x="48" y="225" font-size="9.5" font-family="monospace" fill="#cf222e">myproject/.git/</text>
+
+  <rect x="35" y="242" width="205" height="26" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" rx="4"/>
+  <text x="137" y="259" text-anchor="middle" font-size="9" font-family="monospace" fill="#0969da">git init &#8226; add &#8226; commit</text>
+
+  <!-- ── MIDDLE CONNECTION (ARROWS) ── -->
+  <!-- git push -->
+  <line x1="255" y1="120" x2="415" y2="120" stroke="#0969da" stroke-width="2" marker-end="url(#gh-blue)"/>
+  <text x="337" y="112" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">git push (upload)</text>
+
+  <!-- git pull / clone -->
+  <line x1="415" y1="180" x2="255" y2="180" stroke="#1a7f37" stroke-width="2" marker-end="url(#gh-green)"/>
+  <text x="337" y="172" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#1a7f37">git clone / pull</text>
+
+  <!-- ── RIGHT BOX: GITHUB (CLOUD ECOSYSTEM) ── -->
+  <rect x="420" y="45" width="235" height="235" fill="#ffffff" stroke="#0969da" stroke-width="2" rx="8"/>
+  <rect x="420" y="45" width="235" height="32" fill="#ddf4ff" rx="8"/>
+  <text x="537" y="66" text-anchor="middle" font-size="12" font-weight="bold" fill="#0969da">&#9729; GitHub (Cloud Platform)</text>
+  <line x1="420" y1="77" x2="655" y2="77" stroke="#b6e3ff" stroke-width="1"/>
+
+  <text x="435" y="98" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Nature:</text>
+  <text x="445" y="112" font-size="9.5" fill="#57606a">Web hosting service &amp; collaboration</text>
+  <text x="445" y="125" font-size="9.5" fill="#57606a">platform built on top of Git.</text>
+
+  <text x="435" y="148" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Collaboration Suite:</text>
+  <text x="445" y="162" font-size="9.5" fill="#57606a">&#8226; Pull Requests &amp; Code Review</text>
+  <text x="445" y="175" font-size="9.5" fill="#57606a">&#8226; Issues &amp; Kanban Project Boards</text>
+  <text x="445" y="188" font-size="9.5" fill="#57606a">&#8226; GitHub Actions (CI/CD Pipelines)</text>
+
+  <text x="435" y="212" font-size="10" font-weight="bold" fill="#0f172a">&#8226; Single Source of Truth:</text>
+  <text x="445" y="226" font-size="9.5" fill="#57606a">The central "origin" repository</text>
+
+  <rect x="435" y="242" width="205" height="26" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8" rx="4"/>
+  <text x="537" y="259" text-anchor="middle" font-size="9" font-weight="bold" fill="#0969da">&#127760; github.com/username/repo</text>
+
+  <!-- ── BOTTOM COMPARISON BANNER ── -->
+  <rect x="25" y="295" width="630" height="90" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <text x="40" y="316" font-size="11" font-weight="bold" fill="#0f172a">The Essential Analogy for Learners:</text>
+  <text x="40" y="336" font-size="10" fill="#475569">&#8226; <tspan font-weight="bold" fill="#cf222e">Git is like the car engine</tspan> &#8212; It does the mechanical work of tracking snapshots and managing branches offline.</text>
+  <text x="40" y="356" font-size="10" fill="#475569">&#8226; <tspan font-weight="bold" fill="#0969da">GitHub is like the highway and parking garage</tspan> &#8212; It connects your car with other drivers, provides a dashboard, and hosts your code in the cloud.</text>
+  <text x="40" y="374" font-size="9.5" fill="#57606a">&#8226; Alternatives to GitHub: GitLab, Bitbucket, AWS CodeCommit, Azure Repos (all use standard Git under the hood!).</text>
+</svg>

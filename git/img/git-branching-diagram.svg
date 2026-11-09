@@ -1,0 +1,84 @@
+<svg width="680" height="340" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="340" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead forward -->
+    <marker id="br-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="br-arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#8250df"/>
+    </marker>
+    <marker id="br-arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Git Branching &amp; Merge Strategies</text>
+
+  <!-- ── COMMIT GRAPH ── -->
+  <!-- Commit C1 -->
+  <circle cx="80" cy="110" r="18" fill="#f6f8fa" stroke="#0969da" stroke-width="2"/>
+  <text x="80" y="114" text-anchor="middle" font-size="10" font-family="monospace" font-weight="bold" fill="#0969da">C1</text>
+
+  <!-- Arrow C1 -> C2 -->
+  <line x1="98" y1="110" x2="162" y2="110" stroke="#0969da" stroke-width="2" marker-end="url(#br-arr)"/>
+
+  <!-- Commit C2 -->
+  <circle cx="180" cy="110" r="18" fill="#f6f8fa" stroke="#0969da" stroke-width="2"/>
+  <text x="180" y="114" text-anchor="middle" font-size="10" font-family="monospace" font-weight="bold" fill="#0969da">C2</text>
+
+  <!-- Arrow C2 -> C3 (main continues) -->
+  <line x1="198" y1="110" x2="282" y2="110" stroke="#0969da" stroke-width="2" marker-end="url(#br-arr)"/>
+
+  <!-- Commit C3 (main) -->
+  <circle cx="300" cy="110" r="18" fill="#f6f8fa" stroke="#0969da" stroke-width="2"/>
+  <text x="300" y="114" text-anchor="middle" font-size="10" font-family="monospace" font-weight="bold" fill="#0969da">C3</text>
+
+  <!-- Branch arrow: C2 -> C4 (feature branches off) -->
+  <path d="M 188 126 C 205 175, 235 180, 282 180" fill="none" stroke="#8250df" stroke-width="2" marker-end="url(#br-arr-purple)"/>
+
+  <!-- Commit C4 (feature) -->
+  <circle cx="300" cy="180" r="18" fill="#fcf8ff" stroke="#8250df" stroke-width="2"/>
+  <text x="300" y="184" text-anchor="middle" font-size="10" font-family="monospace" font-weight="bold" fill="#8250df">C4</text>
+
+  <!-- Arrow C4 -> C5 (feature commit) -->
+  <line x1="318" y1="180" x2="402" y2="180" stroke="#8250df" stroke-width="2" marker-end="url(#br-arr-purple)"/>
+
+  <!-- Commit C5 (feature) -->
+  <circle cx="420" cy="180" r="18" fill="#fcf8ff" stroke="#8250df" stroke-width="2"/>
+  <text x="420" y="184" text-anchor="middle" font-size="10" font-family="monospace" font-weight="bold" fill="#8250df">C5</text>
+
+  <!-- Merge arrows into C6: C3 -> C6 and C5 -> C6 -->
+  <line x1="318" y1="110" x2="522" y2="110" stroke="#0969da" stroke-width="2" marker-end="url(#br-arr)"/>
+  <path d="M 438 180 C 475 180, 505 155, 528 126" fill="none" stroke="#1a7f37" stroke-width="2" marker-end="url(#br-arr-green)"/>
+
+  <!-- Merge Commit C6 -->
+  <circle cx="540" cy="110" r="20" fill="#dafbe1" stroke="#1a7f37" stroke-width="2.5"/>
+  <text x="540" y="114" text-anchor="middle" font-size="10" font-family="monospace" font-weight="bold" fill="#1a7f37">C6</text>
+  <text x="540" y="90" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1a7f37">Merge Commit</text>
+
+  <!-- ── BRANCH POINTER LABELS ── -->
+  <!-- Label: feature -->
+  <rect x="448" y="168" width="80" height="24" fill="#8250df" rx="4"/>
+  <text x="488" y="184" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#ffffff">feature</text>
+
+  <!-- Label: main -->
+  <rect x="575" y="98" width="65" height="24" fill="#0969da" rx="4"/>
+  <text x="607" y="114" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#ffffff">main</text>
+
+  <!-- Label: HEAD -->
+  <rect x="575" y="65" width="65" height="20" fill="#24292f" rx="4"/>
+  <text x="607" y="79" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">&#8595; HEAD</text>
+
+  <!-- ── SUMMARY COMPARISON TABLE ── -->
+  <rect x="25" y="220" width="630" height="100" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <text x="40" y="240" font-size="11" font-weight="bold" fill="#0f172a">Branching &amp; Merging Rules:</text>
+  <text x="40" y="260" font-size="10" fill="#475569">&#8226; <tspan font-weight="bold" fill="#0969da">Branch</tspan>: A lightweight, 41-byte pointer to a commit hash. Creating a branch is instant.</text>
+  <text x="40" y="278" font-size="10" fill="#475569">&#8226; <tspan font-weight="bold" fill="#24292f">HEAD</tspan>: The pointer indicating which branch you currently have checked out.</text>
+  <text x="40" y="296" font-size="10" fill="#475569">&#8226; <tspan font-weight="bold" fill="#1a7f37">Fast-Forward Merge</tspan>: Moves branch pointer forward if main has no new commits (no extra commit created).</text>
+  <text x="40" y="312" font-size="10" fill="#475569">&#8226; <tspan font-weight="bold" fill="#8250df">3-Way Merge</tspan>: Creates a new merge commit (C6) with two parent commits when histories diverge.</text>
+</svg>
+

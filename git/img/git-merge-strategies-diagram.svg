@@ -1,0 +1,99 @@
+<svg width="680" height="390" viewBox="0 0 680 390" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="390" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="ms-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="ms-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#8250df"/>
+    </marker>
+    <marker id="ms-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#1a7f37"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Comparison of Git Merge Strategies</text>
+
+  <!-- ── 1. FAST-FORWARD MERGE ── -->
+  <rect x="20" y="42" width="640" height="96" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="50" width="160" height="20" fill="#ddf4ff" rx="3"/>
+  <text x="110" y="64" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#0969da">1. Fast-Forward Merge (--ff)</text>
+  <text x="200" y="64" font-size="9" fill="#57606a">&#8226; Linear history &#8226; No extra merge commit</text>
+
+  <!-- C1 -> C2 -> C3 -->
+  <circle cx="100" cy="104" r="14" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <text x="100" y="107" text-anchor="middle" font-size="8.5" font-family="monospace" font-weight="bold" fill="#0969da">C1</text>
+  <line x1="114" y1="104" x2="166" y2="104" stroke="#0969da" stroke-width="1.8" marker-end="url(#ms-blue)"/>
+
+  <circle cx="180" cy="104" r="14" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <text x="180" y="107" text-anchor="middle" font-size="8.5" font-family="monospace" font-weight="bold" fill="#0969da">C2</text>
+  <line x1="194" y1="104" x2="246" y2="104" stroke="#8250df" stroke-width="1.8" marker-end="url(#ms-purple)"/>
+
+  <circle cx="260" cy="104" r="14" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="260" y="107" text-anchor="middle" font-size="8.5" font-family="monospace" font-weight="bold" fill="#8250df">C3</text>
+  <line x1="274" y1="104" x2="326" y2="104" stroke="#8250df" stroke-width="1.8" marker-end="url(#ms-purple)"/>
+
+  <circle cx="340" cy="104" r="14" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="340" y="107" text-anchor="middle" font-size="8.5" font-family="monospace" font-weight="bold" fill="#8250df">C4</text>
+
+  <rect x="375" y="94" width="105" height="20" fill="#0969da" rx="3"/>
+  <text x="427" y="108" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">main &amp; feature</text>
+  <text x="495" y="108" font-size="8.5" fill="#166534">&#10003; Pointer advances to C4</text>
+
+  <!-- ── 2. 3-WAY MERGE ── -->
+  <rect x="20" y="148" width="640" height="112" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="156" width="160" height="20" fill="#dafbe1" rx="3"/>
+  <text x="110" y="170" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#1a7f37">2. 3-Way Merge (ort / recursive)</text>
+  <text x="200" y="170" font-size="9" fill="#57606a">&#8226; Preserves branch history &#8226; Creates merge commit</text>
+
+  <!-- Base C2 -->
+  <circle cx="100" cy="205" r="13" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <text x="100" y="208" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#0969da">C2</text>
+
+  <!-- main branch path: C3 -->
+  <line x1="113" y1="198" x2="165" y2="188" stroke="#0969da" stroke-width="1.8" marker-end="url(#ms-blue)"/>
+  <circle cx="178" cy="186" r="13" fill="#ffffff" stroke="#0969da" stroke-width="1.8"/>
+  <text x="178" y="189" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#0969da">C3</text>
+
+  <!-- feature branch path: C4, C5 -->
+  <line x1="113" y1="212" x2="165" y2="228" stroke="#8250df" stroke-width="1.8" marker-end="url(#ms-purple)"/>
+  <circle cx="178" cy="230" r="13" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="178" y="233" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#8250df">C4</text>
+  <line x1="191" y1="230" x2="243" y2="230" stroke="#8250df" stroke-width="1.8" marker-end="url(#ms-purple)"/>
+  <circle cx="256" cy="230" r="13" fill="#fcf8ff" stroke="#8250df" stroke-width="1.8"/>
+  <text x="256" y="233" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#8250df">C5</text>
+
+  <!-- Merge lines into M1 -->
+  <line x1="191" y1="186" x2="330" y2="202" stroke="#0969da" stroke-width="1.8" marker-end="url(#ms-green)"/>
+  <line x1="269" y1="230" x2="330" y2="212" stroke="#8250df" stroke-width="1.8" marker-end="url(#ms-green)"/>
+
+  <!-- Merge Commit M1 -->
+  <circle cx="345" cy="206" r="15" fill="#dafbe1" stroke="#1a7f37" stroke-width="2.2"/>
+  <text x="345" y="209" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#1a7f37">M1</text>
+  <rect x="375" y="196" width="60" height="20" fill="#1a7f37" rx="3"/>
+  <text x="405" y="210" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">main</text>
+  <text x="445" y="210" font-size="8.5" fill="#166534">&#10003; 2 parent commits tied together</text>
+
+  <!-- ── 3. SQUASH MERGE ── -->
+  <rect x="20" y="270" width="640" height="105" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <rect x="30" y="278" width="160" height="20" fill="#fff8c5" rx="3"/>
+  <text x="110" y="292" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#7d4e00">3. Squash Merge (--squash)</text>
+  <text x="200" y="292" font-size="9" fill="#57606a">&#8226; Collapses all branch commits into 1 single clean commit on main</text>
+
+  <rect x="35" y="310" width="220" height="48" fill="#fcf8ff" stroke="#8250df" stroke-width="1" rx="4"/>
+  <text x="145" y="328" text-anchor="middle" font-size="9" font-weight="bold" fill="#8250df">feature branch: C4 + C5 + C6</text>
+  <text x="145" y="344" text-anchor="middle" font-size="8.5" fill="#57606a">(Multiple messy work-in-progress commits)</text>
+
+  <!-- Arrow squash -->
+  <line x1="260" y1="334" x2="315" y2="334" stroke="#7d4e00" stroke-width="2" marker-end="url(#ms-green)"/>
+  <text x="288" y="326" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#7d4e00">squash</text>
+
+  <rect x="325" y="310" width="315" height="48" fill="#dafbe1" stroke="#1a7f37" stroke-width="1" rx="4"/>
+  <text x="482" y="328" text-anchor="middle" font-size="9" font-weight="bold" fill="#166534">Single Clean Commit on main: "feat: add user profile"</text>
+  <text x="482" y="344" text-anchor="middle" font-size="8.5" fill="#57606a">&#10003; Keeps main branch git log completely clean and bisect-friendly</text>
+</svg>
+

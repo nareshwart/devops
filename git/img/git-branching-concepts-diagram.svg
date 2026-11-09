@@ -1,0 +1,75 @@
+<svg width="680" height="340" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="340" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="brc-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="brc-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#8250df"/>
+    </marker>
+    <marker id="brc-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">How Branching Enables Isolated Parallel Development</text>
+
+  <!-- ── 1. MAIN PRODUCTION LINE ── -->
+  <!-- Commits C1 -> C2 -> C3 -->
+  <circle cx="90" cy="110" r="15" fill="#f6f8fa" stroke="#0969da" stroke-width="2"/>
+  <text x="90" y="114" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">C1</text>
+  <line x1="105" y1="110" x2="165" y2="110" stroke="#0969da" stroke-width="2" marker-end="url(#brc-blue)"/>
+
+  <circle cx="180" cy="110" r="15" fill="#f6f8fa" stroke="#0969da" stroke-width="2"/>
+  <text x="180" y="114" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">C2</text>
+  <line x1="195" y1="110" x2="265" y2="110" stroke="#0969da" stroke-width="2" marker-end="url(#brc-blue)"/>
+
+  <circle cx="280" cy="110" r="15" fill="#f6f8fa" stroke="#0969da" stroke-width="2"/>
+  <text x="280" y="114" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">C3</text>
+
+  <!-- Branch Pointer: main -->
+  <rect x="310" y="100" width="60" height="20" fill="#0969da" rx="3"/>
+  <text x="340" y="114" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">main</text>
+  <text x="380" y="114" font-size="9" fill="#166534">&#10003; Stable / Production Ready</text>
+
+  <!-- ── 2. FEATURE A: AUTH (BRANCH OFF C2) ── -->
+  <path d="M 188 123 C 205 170, 230 175, 265 175" fill="none" stroke="#8250df" stroke-width="2" marker-end="url(#brc-purple)"/>
+  <circle cx="280" cy="175" r="15" fill="#fcf8ff" stroke="#8250df" stroke-width="2"/>
+  <text x="280" y="179" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#8250df">C4</text>
+  <line x1="295" y1="175" x2="365" y2="175" stroke="#8250df" stroke-width="2" marker-end="url(#brc-purple)"/>
+
+  <circle cx="380" cy="175" r="15" fill="#fcf8ff" stroke="#8250df" stroke-width="2"/>
+  <text x="380" y="179" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#8250df">C5</text>
+
+  <!-- Pointer: feature-auth -->
+  <rect x="410" y="165" width="95" height="20" fill="#8250df" rx="3"/>
+  <text x="457" y="179" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">feature-auth</text>
+
+  <!-- HEAD Pointer to feature-auth -->
+  <rect x="515" y="165" width="55" height="20" fill="#24292f" rx="3"/>
+  <text x="542" y="179" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#ffffff">&#8592; HEAD</text>
+  <text x="580" y="179" font-size="8.5" fill="#57606a">(Active Branch)</text>
+
+  <!-- ── 3. FEATURE B: PAYMENT (BRANCH OFF C2) ── -->
+  <path d="M 188 97 C 205 50, 230 45, 265 45" fill="none" stroke="#d97706" stroke-width="2" marker-end="url(#brc-orange)"/>
+  <circle cx="280" cy="45" r="15" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+  <text x="280" y="49" text-anchor="middle" font-size="9" font-family="monospace" font-weight="bold" fill="#d97706">C6</text>
+
+  <!-- Pointer: feature-payment -->
+  <rect x="310" y="35" width="115" height="20" fill="#d97706" rx="3"/>
+  <text x="367" y="49" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">feature-payment</text>
+  <text x="440" y="49" font-size="9" fill="#57606a">(Dev B works in parallel)</text>
+
+  <!-- ── 4. SUMMARY BOX: KEY BENEFITS ── -->
+  <rect x="20" y="215" width="640" height="110" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="6"/>
+  <text x="35" y="235" font-size="11" font-weight="bold" fill="#0f172a">Why Branching Powers Modern DevOps:</text>
+  <text x="35" y="254" font-size="9.5" fill="#57606a">&#8226; <tspan font-weight="bold" fill="#24292f">Complete Code Isolation:</tspan> Bugs or experimental code on a feature branch will never break production on <tspan font-family="monospace">main</tspan>.</text>
+  <text x="35" y="272" font-size="9.5" fill="#57606a">&#8226; <tspan font-weight="bold" fill="#24292f">Independent Parallel Work:</tspan> Multiple engineers work on different features concurrently without stepping on each other's toes.</text>
+  <text x="35" y="290" font-size="9.5" fill="#57606a">&#8226; <tspan font-weight="bold" fill="#24292f">Zero Disk Overhead:</tspan> A Git branch is simply a 41-byte text file storing a commit SHA hash. Creating/switching branches is instantaneous.</text>
+  <text x="35" y="308" font-size="9.5" fill="#57606a">&#8226; <tspan font-weight="bold" fill="#24292f">Safe Discarding:</tspan> If an experiment fails, delete the branch with <tspan font-family="monospace">git branch -D</tspan> without leaving any dirty history behind.</text>
+</svg>
+

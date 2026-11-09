@@ -1,0 +1,73 @@
+<svg width="580" height="455" viewBox="0 0 580 455" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+
+  <rect width="580" height="455" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <marker id="d-fwd" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+    <marker id="d-rev" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+  </defs>
+
+  <!-- ── REMOTE SERVER ── -->
+  <text x="268" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#24292f">Remote Server</text>
+  <rect x="140" y="30" width="256" height="132" fill="#fff" stroke="#d73a49" stroke-width="2" rx="6"/>
+  <!-- all text centered at x=268 -->
+  <text x="268" y="57"  text-anchor="middle" font-size="11" font-family="monospace" fill="#24292f">project007/</text>
+  <text x="268" y="75"  text-anchor="middle" font-size="11" font-family="monospace" fill="#57606a">file1  v1, v2, v3, v4</text>
+  <text x="268" y="93"  text-anchor="middle" font-size="11" font-family="monospace" fill="#57606a">file2  v1, v2</text>
+  <line x1="140" y1="105" x2="396" y2="105" stroke="#f0d0d0" stroke-width="1"/>
+  <text x="268" y="122" text-anchor="middle" font-size="10.5" fill="#0969da">os (github / bitbucket / gitlab)</text>
+  <!-- box bottom = y:162 -->
+
+  <!-- ── BADGE (separate, right of box) ── -->
+  <rect x="406" y="40" width="136" height="58" fill="#ddf4ff" stroke="#0969da" stroke-width="1" rx="4"/>
+  <text x="474" y="62" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#0969da">AWS CodeCommit</text>
+  <text x="474" y="80" text-anchor="middle" font-size="9.5" fill="#0969da">Azure Repos</text>
+
+  <!-- ── BIDIRECTIONAL ARROWS ── -->
+  <!-- left: server ↕ Laptop A   midpoint≈(148,210)  angle≈-45° -->
+  <line x1="196" y1="162" x2="100" y2="258"
+        stroke="#0969da" stroke-width="1.8"
+        marker-start="url(#d-rev)" marker-end="url(#d-fwd)"/>
+  <text x="148" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="#0969da"
+        transform="rotate(-45, 148, 212)">push / pull</text>
+
+  <!-- right: server ↕ Laptop B   midpoint≈(410,210)  angle≈+34° -->
+  <line x1="340" y1="162" x2="480" y2="258"
+        stroke="#0969da" stroke-width="1.8"
+        marker-start="url(#d-rev)" marker-end="url(#d-fwd)"/>
+  <text x="410" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="#0969da"
+        transform="rotate(34, 410, 212)">push / pull</text>
+
+  <!-- ── LAPTOP A ── -->
+  <text x="100" y="256" text-anchor="middle" font-size="11" font-weight="bold" fill="#24292f">Dev Laptop A</text>
+  <rect x="10" y="263" width="185" height="114" fill="#fff" stroke="#d73a49" stroke-width="1.5" rx="6"/>
+  <text x="26" y="285" font-size="11" font-family="monospace" fill="#24292f">project007/</text>
+  <text x="38" y="303" font-size="11" font-family="monospace" fill="#57606a">file1  v1, v2, v3</text>
+  <text x="38" y="321" font-size="11" font-family="monospace" fill="#57606a">file2  v1, v2</text>
+  <line x1="10" y1="332" x2="195" y2="332" stroke="#f0d0d0" stroke-width="1"/>
+  <text x="26" y="349" font-size="10.5" font-weight="bold" fill="#d73a49">install local vcs tool</text>
+  <text x="26" y="366" font-size="10.5" fill="#d73a49">OS  ( git client )</text>
+  <!-- box bottom = y:377 -->
+
+  <!-- ── LAPTOP B ── -->
+  <text x="480" y="256" text-anchor="middle" font-size="11" font-weight="bold" fill="#24292f">Dev Laptop B</text>
+  <rect x="385" y="263" width="185" height="114" fill="#fff" stroke="#d73a49" stroke-width="1.5" rx="6"/>
+  <text x="401" y="285" font-size="11" font-family="monospace" fill="#24292f">project007/</text>
+  <text x="413" y="303" font-size="11" font-family="monospace" fill="#57606a">file1  v1, v2, v3, v4</text>
+  <text x="413" y="321" font-size="11" font-family="monospace" fill="#57606a">file2  v1, v2</text>
+  <line x1="385" y1="332" x2="570" y2="332" stroke="#f0d0d0" stroke-width="1"/>
+  <text x="401" y="349" font-size="10.5" font-weight="bold" fill="#d73a49">install local vcs tool</text>
+  <text x="401" y="366" font-size="10.5" fill="#d73a49">OS  ( git client )</text>
+  <!-- box bottom = y:377 -->
+
+  <!-- ── NOTES ── -->
+  <rect x="10" y="390" width="560" height="58" fill="#dafbe1" stroke="#2da44e" stroke-width="1.2" rx="6"/>
+  <text x="26" y="408" font-size="11" font-weight="bold" fill="#116329">&#10003;  History tracked on remote server AND every dev laptop</text>
+  <text x="26" y="426" font-size="11" fill="#116329">&#10003;  Work locally without network — push to remote when ready to share</text>
+  <text x="26" y="444" font-size="11" fill="#116329">&#10003;  Devs are NOT dependent on network to complete a version / work</text>
+
+</svg>

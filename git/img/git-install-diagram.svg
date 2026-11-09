@@ -1,0 +1,68 @@
+<svg width="680" height="280" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="680" height="280" fill="#ffffff" rx="10"/>
+
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="inst-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#0969da"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#24292f">Git Client Installation &amp; Setup</text>
+
+  <!-- ── 1. WINDOWS ── -->
+  <rect x="25" y="42" width="195" height="150" fill="#ffffff" stroke="#0078d4" stroke-width="1.8" rx="6"/>
+  <rect x="25" y="42" width="195" height="28" fill="#f0f6ff" rx="6"/>
+  <text x="122" y="61" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0078d4">&#8862; Windows</text>
+  <line x1="25" y1="70" x2="220" y2="70" stroke="#0078d4" stroke-width="1"/>
+  
+  <text x="36" y="90" font-size="10" font-weight="bold" fill="#24292f">1. Winget (CLI):</text>
+  <rect x="34" y="96" width="177" height="20" fill="#f6f8fa" stroke="#d0d7de" stroke-width="0.8" rx="3"/>
+  <text x="40" y="110" font-size="8.5" font-family="monospace" fill="#0969da">winget install --id Git.Git</text>
+
+  <text x="36" y="132" font-size="10" font-weight="bold" fill="#24292f">2. Installer (GUI):</text>
+  <text x="40" y="147" font-size="9" fill="#57606a">git-scm.com/download/win</text>
+  <text x="40" y="161" font-size="8.5" fill="#166534">&#10003; Includes Git Bash + GUI</text>
+  <text x="40" y="176" font-size="8.5" fill="#57606a">&#8226; Adds Git to System PATH</text>
+
+  <!-- ── 2. MACOS ── -->
+  <rect x="242" y="42" width="195" height="150" fill="#ffffff" stroke="#24292f" stroke-width="1.8" rx="6"/>
+  <rect x="242" y="42" width="195" height="28" fill="#f6f8fa" rx="6"/>
+  <text x="339" y="61" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#24292f">&#63743; macOS</text>
+  <line x1="242" y1="70" x2="437" y2="70" stroke="#24292f" stroke-width="1"/>
+
+  <text x="253" y="90" font-size="10" font-weight="bold" fill="#24292f">1. Homebrew (Recommended):</text>
+  <rect x="251" y="96" width="177" height="20" fill="#f6f8fa" stroke="#d0d7de" stroke-width="0.8" rx="3"/>
+  <text x="257" y="110" font-size="9" font-family="monospace" fill="#0969da">brew install git</text>
+
+  <text x="253" y="132" font-size="10" font-weight="bold" fill="#24292f">2. Apple Xcode Tools:</text>
+  <rect x="251" y="138" width="177" height="20" fill="#f6f8fa" stroke="#d0d7de" stroke-width="0.8" rx="3"/>
+  <text x="257" y="152" font-size="9" font-family="monospace" fill="#0969da">xcode-select --install</text>
+  <text x="253" y="176" font-size="8.5" fill="#166534">&#10003; Apple native developer tools</text>
+
+  <!-- ── 3. LINUX ── -->
+  <rect x="460" y="42" width="195" height="150" fill="#ffffff" stroke="#e95420" stroke-width="1.8" rx="6"/>
+  <rect x="460" y="42" width="195" height="28" fill="#fff5f2" rx="6"/>
+  <text x="557" y="61" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#e95420">&#128039; Linux</text>
+  <line x1="460" y1="70" x2="655" y2="70" stroke="#e95420" stroke-width="1"/>
+
+  <text x="471" y="90" font-size="10" font-weight="bold" fill="#24292f">1. Debian / Ubuntu:</text>
+  <rect x="469" y="96" width="177" height="20" fill="#f6f8fa" stroke="#d0d7de" stroke-width="0.8" rx="3"/>
+  <text x="475" y="110" font-size="8.5" font-family="monospace" fill="#0969da">sudo apt install git -y</text>
+
+  <text x="471" y="132" font-size="10" font-weight="bold" fill="#24292f">2. RHEL / CentOS / Amazon:</text>
+  <rect x="469" y="138" width="177" height="20" fill="#f6f8fa" stroke="#d0d7de" stroke-width="0.8" rx="3"/>
+  <text x="475" y="152" font-size="8.5" font-family="monospace" fill="#0969da">sudo yum install git -y</text>
+  <text x="471" y="176" font-size="8.5" fill="#57606a">&#8226; Fedora: sudo dnf install git</text>
+
+  <!-- ── COMMON BOTTOM BAR: FIRST-TIME SETUP ── -->
+  <rect x="25" y="206" width="630" height="60" fill="#f0fdf4" stroke="#1a7f37" stroke-width="1.2" rx="6"/>
+  <text x="38" y="224" font-size="10.5" font-weight="bold" fill="#166534">&#10003; Post-Install Step: Configure Your Global Identity</text>
+  <text x="38" y="242" font-size="9.5" font-family="monospace" fill="#24292f">git config --global user.name "Your Name"</text>
+  <text x="38" y="257" font-size="9.5" font-family="monospace" fill="#24292f">git config --global user.email "your.email@example.com"</text>
+  <text x="495" y="242" font-size="9" fill="#57606a">Verify:</text>
+  <text x="495" y="257" font-size="9" font-family="monospace" font-weight="bold" fill="#0969da">git --version</text>
+</svg>
+
