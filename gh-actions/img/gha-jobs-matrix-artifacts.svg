@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #475569; }
+      .section-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1e293b; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .text-sm { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 11px; fill: #334155; }
+      .text-code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; font-size: 11px; fill: #0f172a; }
+      .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; }
+    </style>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="#f8fafc" />
+
+  <!-- Title Header -->
+  <rect x="30" y="25" width="6" height="42" fill="url(#headerGrad)" rx="3" />
+  <text x="48" y="44" class="title">Jobs, Matrix Multi-Version Builds &amp; Artifact Storage</text>
+  <text x="48" y="63" class="subtitle">DAG dependencies (`needs:`), cross-platform matrix testing, and inter-job data sharing</text>
+
+  <!-- COLUMN 1: Job Dependencies & DAG -->
+  <g transform="translate(30, 85)">
+    <rect width="460" height="505" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <rect width="460" height="42" rx="10" fill="#eff6ff" />
+    <path d="M 0 32 L 0 42 L 460 42 L 460 32 Z" fill="#eff6ff" />
+    <circle cx="24" cy="21" r="10" fill="#2563eb" />
+    <text x="24" y="25" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff">&#8644;</text>
+    <text x="44" y="26" class="section-title">Job Dependencies &amp; Artifact Sharing</text>
+
+    <!-- Visual DAG Flow -->
+    <g transform="translate(15, 52)">
+      <rect width="430" height="235" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="card-title">Inter-Job Dependency Graph (`needs:`)</text>
+
+      <!-- Job 1: Build -->
+      <g transform="translate(20, 36)">
+        <rect width="180" height="70" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2" />
+        <text x="12" y="20" class="text-code" font-weight="700" fill="#1d4ed8">job: build_app</text>
+        <text x="12" y="38" class="text-sm">Compiles TypeScript / Go</text>
+        <text x="12" y="56" class="text-code" fill="#059669">upload-artifact@v4 &#8599;</text>
+      </g>
+
+      <!-- Job 2: Test -->
+      <g transform="translate(230, 36)">
+        <rect width="180" height="70" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2" />
+        <text x="12" y="20" class="text-code" font-weight="700" fill="#15803d">job: unit_test</text>
+        <text x="12" y="38" class="text-sm">Runs Pytest / Jest suite</text>
+        <text x="12" y="56" class="text-sm" fill="#166534">Runs in parallel with build!</text>
+      </g>
+
+      <!-- Connecting arrows down to deploy -->
+      <path d="M 110 106 L 110 135 L 215 135 L 215 145 M 211 141 L 215 145 L 219 141" stroke="#64748b" stroke-width="1.5" fill="none" />
+      <path d="M 320 106 L 320 135 L 215 135" stroke="#64748b" stroke-width="1.5" fill="none" />
+
+      <!-- Job 3: Deploy (needs: [build_app, unit_test]) -->
+      <g transform="translate(100, 150)">
+        <rect width="230" height="74" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="1.5" />
+        <text x="12" y="20" class="text-code" font-weight="700" fill="#854d0e">job: deploy_prod</text>
+        <text x="12" y="38" class="text-code" fill="#b45309">needs: [build_app, unit_test]</text>
+        <text x="12" y="56" class="text-code" fill="#0284c7">download-artifact@v4 &#8601;</text>
+      </g>
+    </g>
+
+    <!-- Why Artifacts Box -->
+    <g transform="translate(15, 302)">
+      <rect width="430" height="186" rx="6" fill="#0f172a" />
+      <text x="15" y="24" font-family="monospace" font-size="12" fill="#38bdf8"># Crucial Rule: Jobs Run on Separate Clean VMs!</text>
+      <text x="15" y="44" class="text-sm" fill="#cbd5e1">Files created in Job 1 disappear when Job 1 ends.</text>
+      <text x="15" y="60" class="text-sm" fill="#cbd5e1">To share build outputs across jobs, use GitHub Artifacts:</text>
+
+      <rect x="15" y="72" width="400" height="98" rx="4" fill="#1e293b" />
+      <text x="25" y="92" class="text-code" fill="#94a3b8"># In job 1 (build):</text>
+      <text x="25" y="108" class="text-code" fill="#f8fafc">- uses: actions/upload-artifact@v4</text>
+      <text x="40" y="124" class="text-code" fill="#38bdf8">  with: { name: app-dist, path: dist/ }</text>
+      <text x="25" y="142" class="text-code" fill="#94a3b8"># In job 2 (deploy):</text>
+      <text x="25" y="158" class="text-code" fill="#f8fafc">- uses: actions/download-artifact@v4</text>
+    </g>
+  </g>
+
+  <!-- COLUMN 2: Matrix Strategy & Caching -->
+  <g transform="translate(510, 85)">
+    <rect width="460" height="505" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+    <rect width="460" height="42" rx="10" fill="#fdf4ff" />
+    <path d="M 0 32 L 0 42 L 460 42 L 460 32 Z" fill="#fdf4ff" />
+    <circle cx="24" cy="21" r="10" fill="#c026d3" />
+    <text x="24" y="25" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff">&#8862;</text>
+    <text x="44" y="26" class="section-title">Matrix Builds (`strategy: matrix:`)</text>
+
+    <!-- Matrix Grid visual -->
+    <g transform="translate(15, 52)">
+      <rect width="430" height="235" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="card-title">Fan-Out Matrix Strategy (6 Parallel Jobs)</text>
+
+      <!-- Matrix Code -->
+      <rect x="12" y="28" width="406" height="74" rx="4" fill="#0f172a" />
+      <text x="20" y="44" class="text-code" fill="#f43f5e">strategy:</text>
+      <text x="32" y="60" class="text-code" fill="#38bdf8">matrix:</text>
+      <text x="45" y="76" class="text-code" fill="#cbd5e1">os: [ ubuntu-latest, macos-latest ]</text>
+      <text x="45" y="92" class="text-code" fill="#cbd5e1">python: [ "3.10", "3.11", "3.12" ]</text>
+
+      <!-- 6 Jobs Resulting Grid -->
+      <g transform="translate(12, 112)">
+        <!-- Row 1: Ubuntu -->
+        <rect x="0" y="0" width="130" height="46" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+        <text x="8" y="18" class="text-code" font-weight="600" fill="#1e40af">Ubuntu + Py3.10</text>
+        <text x="8" y="34" class="text-sm" fill="#059669">&#10003; VM 1 (Parallel)</text>
+
+        <rect x="138" y="0" width="130" height="46" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+        <text x="146" y="18" class="text-code" font-weight="600" fill="#1e40af">Ubuntu + Py3.11</text>
+        <text x="146" y="34" class="text-sm" fill="#059669">&#10003; VM 2 (Parallel)</text>
+
+        <rect x="276" y="0" width="130" height="46" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+        <text x="284" y="18" class="text-code" font-weight="600" fill="#1e40af">Ubuntu + Py3.12</text>
+        <text x="284" y="34" class="text-sm" fill="#059669">&#10003; VM 3 (Parallel)</text>
+
+        <!-- Row 2: macOS -->
+        <rect x="0" y="54" width="130" height="46" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
+        <text x="8" y="72" class="text-code" font-weight="600" fill="#6b21a8">macOS + Py3.10</text>
+        <text x="8" y="88" class="text-sm" fill="#059669">&#10003; VM 4 (Parallel)</text>
+
+        <rect x="138" y="54" width="130" height="46" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
+        <text x="146" y="72" class="text-code" font-weight="600" fill="#6b21a8">macOS + Py3.11</text>
+        <text x="146" y="88" class="text-sm" fill="#059669">&#10003; VM 5 (Parallel)</text>
+
+        <rect x="276" y="54" width="130" height="46" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
+        <text x="284" y="72" class="text-code" font-weight="600" fill="#6b21a8">macOS + Py3.12</text>
+        <text x="284" y="88" class="text-sm" fill="#059669">&#10003; VM 6 (Parallel)</text>
+      </g>
+    </g>
+
+    <!-- Caching vs Artifacts Comparison -->
+    <g transform="translate(15, 302)">
+      <rect width="430" height="186" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="22" class="card-title">Dependency Cache vs Build Artifacts</text>
+
+      <g transform="translate(12, 34)">
+        <rect width="406" height="66" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+        <text x="10" y="18" class="text-sm" font-weight="700" fill="#166534">&#9889; Caching (`actions/cache`)</text>
+        <text x="10" y="34" class="text-sm" fill="#334155">&#8226; Purpose: Speed up runs by caching dependencies (`node_modules`, `pip`)</text>
+        <text x="10" y="50" class="text-sm" fill="#334155">&#8226; Lifecycle: Ephemeral cache, evicted if untouched for 7 days (10GB limit)</text>
+      </g>
+
+      <g transform="translate(12, 108)">
+        <rect width="406" height="66" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" />
+        <text x="10" y="18" class="text-sm" font-weight="700" fill="#1e40af">&#128230; Artifacts (`actions/upload-artifact`)</text>
+        <text x="10" y="34" class="text-sm" fill="#334155">&#8226; Purpose: Retain compiled binaries, test reports, and release zips</text>
+        <text x="10" y="50" class="text-sm" fill="#334155">&#8226; Storage: Persistent in UI run summary (default 90-day retention)</text>
+      </g>
+    </g>
+  </g>
+</svg>
+
