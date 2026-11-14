@@ -52,7 +52,7 @@ Type=simple
 ExecStart=/usr/local/bin/prometheus \
   --config.file=/etc/prometheus/prometheus.yaml \
   --storage.tsdb.path=/var/lib/prometheus/ \
-  --web.listen-address=127.0.0.1:9090
+  --web.listen-address=0.0.0.0:9090
 Restart=on-failure
 
 [Install]
