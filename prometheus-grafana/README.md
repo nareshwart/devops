@@ -9,6 +9,8 @@ Learn how Prometheus collects and stores metrics, and how Grafana queries and vi
 | 1 | [Prometheus Overview and Architecture](./concepts/prometheus-overview-arch.md) | Prometheus components, metric scraping, storage, queries, and alert flow |
 | 2 | [Understanding `prometheus.yaml`](./concepts/prometheus-yaml-explained.md) | Configuration fields and examples for VMs, applications, databases, and Kubernetes |
 | 3 | [What Is Grafana? Architecture Overview](./concepts/grafana-overview-arch.md) | How Grafana queries Prometheus and turns results into dashboards |
+| 4 | [PromQL Queries for the Prometheus UI](./concepts/promql-queries.md) | Query target health, host resources, and application or exporter metrics |
+| 5 | [PromQL Query Basics](./concepts/promql-query-basics.md) | Build expressions with metrics, label filters, range selectors, functions, and aggregations |
 
 ## Hands-on labs
 
